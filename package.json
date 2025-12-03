@@ -10,9 +10,7 @@
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {
+    "react-dom": "latest",
     "typescript": "^5.4.0",
     "@types/react": "^18.3.0",
     "@types/node": "^20.11.0"
