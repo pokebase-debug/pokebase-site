@@ -91,4 +91,85 @@ export default async function Home() {
                     <img
                       src={image.url}
                       alt={image.altText || product.title}
-                      style=
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#6b7280",
+                        fontSize: "0.8rem",
+                      }}
+                    >
+                      No image
+                    </div>
+                  )}
+                </div>
+
+                <h3
+                  style={{
+                    fontSize: "0.95rem",
+                    margin: 0,
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {product.title}
+                </h3>
+
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.75rem",
+                    color: "#6b7280",
+                  }}
+                >
+                  {product.productType || "Pokemon Product"}
+                </p>
+
+                {price && (
+                  <p
+                    style={{
+                      margin: "0.25rem 0 0.5rem 0",
+                      fontWeight: 600,
+                      fontSize: "0.9rem",
+                      color: "#f97316",
+                    }}
+                  >
+                    {price.amount} {price.currencyCode}
+                  </p>
+                )}
+
+                <a
+                  href={`https://${process.env.SHOPIFY_STORE_DOMAIN}/products/${product.handle}`}
+                  style={{
+                    marginTop: "auto",
+                    display: "inline-block",
+                    textAlign: "center",
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    padding: "0.4rem 0.8rem",
+                    borderRadius: "999px",
+                    background:
+                      "linear-gradient(135deg, #f97316, #ec4899)",
+                    color: "#020617",
+                    textDecoration: "none",
+                  }}
+                >
+                  Shopify’da incele
+                </a>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    </main>
+  );
+}
